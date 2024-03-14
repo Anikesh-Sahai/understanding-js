@@ -35,4 +35,38 @@ const result = async () => {
   }
 };
 
-result();
+// result();
+
+// question: what is the output
+console.log("start");
+
+const promise1 = new Promise((resolve, reject) => {
+  console.log(1);
+  resolve(2);
+});
+
+promise1.then((res) => {
+  console.log(res);
+});
+
+console.log("end");
+
+// start 1 end 2    the console was in the synchronus code thats why its print in line
+
+// question : what is the output
+
+console.log("start");
+
+const promise = new Promise((resolve, reject) => {
+  console.log(1);
+  resolve(2);
+  console.log(3);
+});
+
+promise.then((res) => {
+  console.log(res);
+});
+
+console.log("end");
+
+// start 1 3 end 2 
